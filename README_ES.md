@@ -101,21 +101,45 @@ sequenceDiagram
 
 ```
 .
-├── .antigravity/       # 🛸 Configuración Oficial de Antigravity
-│  └── rules.md        # Reglas y Permisos del Agente
-├── artifacts/          # 📂 Salidas del Agente (Planes, Registros, Visuales)
-├── .context/           # Base de Conocimiento de IA
-├── .github/            # Flujos de Trabajo CI/CD
-├── src/                # Código Fuente
-│  ├── agent.py        # Lógica Principal del Agente
-│  ├── config.py       # Gestión de Configuraciones
-│  ├── memory.py       # Gestor de Memoria JSON
-│  └── tools/          # Herramientas del Agente
-├── tests/              # Suite de Pruebas
-├── .cursorrules        # Puntero de Compatibilidad
-├── Dockerfile          # Construcción de Producción
-├── docker-compose.yml  # Configuración de Desarrollo Local
-└── mission.md          # Objetivo del Agente
+├── .antigravity/        # 🛸 Config oficial de Antigravity
+├── .context/            # 📚 Base de conocimiento auto-cargada
+├── .cursorrules         # 🔎 Puntero de auto-carga del IDE
+├── .github/             # ⚙️ Flujos CI/CD
+├── artifacts/           # 📂 Salidas (planes, logs, visuales)
+├── scripts/             # 🧪 Scripts de demo/utilidades
+│   └── demo_tools.py
+├── src/                 # 🧠 Código del agente
+│   ├── agent.py         # Bucle principal del agente
+│   ├── config.py        # Gestión de configuración
+│   ├── mcp_client.py    # Cliente de integración MCP
+│   ├── memory.py        # Gestor de memoria JSON
+│   ├── swarm.py         # Orquestador de enjambre
+│   ├── swarm_demo.py    # Demo interactiva de enjambre
+│   ├── agents/          # Agentes especialistas (router/coder/reviewer/researcher)
+│   │   ├── base_agent.py
+│   │   ├── coder_agent.py
+│   │   ├── researcher_agent.py
+│   │   ├── reviewer_agent.py
+│   │   └── router_agent.py
+│   └── tools/           # Implementaciones de herramientas
+│       ├── demo_tool.py
+│       ├── example_tool.py
+│       ├── mcp_tools.py
+│       └── openai_proxy.py
+├── tests/               # ✅ Suite de pruebas
+│   ├── conftest.py
+│   ├── test_agent.py
+│   ├── test_mcp.py
+│   ├── test_memory.py
+│   └── test_swarm.py
+├── agent_memory.json    # Almacenamiento de memoria en runtime
+├── mcp_servers.json     # Configuraciones de servidores MCP
+├── mission.md           # Objetivo del agente
+├── requirements.txt     # Dependencias Python
+├── Dockerfile           # Build de contenedor
+├── docker-compose.yml   # Stack de desarrollo local
+├── README.md / README_ES.md / README_CN.md
+└── LICENSE
 ```
 
 ## 🚀 Flujo de Trabajo “Cero-Configuración”

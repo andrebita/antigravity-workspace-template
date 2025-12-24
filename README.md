@@ -101,215 +101,45 @@ sequenceDiagram
 
 ```
 .
-├── .antigravity/       # 🛸 Official Antigravity Config
-│  └── rules.md        # Agent Rules & Permissions
-├── artifacts/          # 📂 Agent Outputs (Plans, Logs, Visuals)
-├── .context/           # AI Knowledge Base
-├── .github/            # CI/CD Workflows
-├── src/                # Source Code
-│  ├── agent.py        # Main Agent Logic
-│  ├── config.py       # Settings Management
-│  ├── memory.py       # JSON Memory Manager
-│  └── tools/          # Agent Tools
-├── tests/              # Test Suite
-├── .cursorrules        # Compatibility Pointer
-├── Dockerfile          # Production Build
-├── docker-compose.yml  # Local Dev Setup
-└── mission.md          # Agent Objective
-```
-
-## 🚀 The "Zero-Config" Workflow
-
-Stop writing long system prompts. This workspace pre-loads the AI's cognitive architecture for you.
-
-### Step 1: Clone & Rename (The "Mold")
-Treat this repository as a factory mold. Clone it, then rename the folder to your project name.
-```bash
-git clone https://github.com/study8677/antigravity-workspace-template.git my-agent-project
-cd my-agent-project
-# Now you are ready. No setup required.
-```
-
-### Step 2: The Magic Moment ⚡️
-Open the folder in Cursor or Google Antigravity.
-- 👀 **Watch**: The IDE automatically detects `.cursorrules`.
-- 🧠 **Load**: The AI silently ingests the "Antigravity Expert" persona from `.antigravity/rules.md`.
-
-### Step 3: Just Prompt (No Instructions Needed)
-You don't need to tell the AI to "be careful" or "use the src folder". It's already brainwashed to be a Senior Engineer.
-
-**Old Way (Manual Prompting)**:
-> "Please write a snake game. Make sure to use modular code. Put files in src. Don't forget comments..."
-
-**The Antigravity Way**:
-> "Build a snake game."
-
-The AI will automatically:
-1. 🛑 **Pause**: "According to protocols, I must plan first."
-2. 📄 **Document**: Generates `artifacts/plan_snake.md`.
-3. 🔨 **Build**: Writes modular code into `src/game/` with full Google-style docstrings.
-
-## 🗺️ Roadmap
-
-- [x] **Phase 1: Foundation** (Scaffold, Config, Memory)
-- [x] **Phase 2: DevOps** (Docker, CI/CD)
-- [x] **Phase 3: Antigravity Compliance** (Rules, Artifacts)
-- [x] **Phase 4: Advanced Memory** (Summary Buffer Implemented ✅)
-- [x] **Phase 5: Cognitive Architecture** (Generic Tool Dispatch Implemented ✅)
-- [x] **Phase 6: Dynamic Discovery** (Auto Tool & Context Loading ✅)
-- [x] **Phase 7: Multi-Agent Swarm** (Router-Worker Orchestration ✅)
-
-## 🔥 New: True Zero-Config Tool & Context Loading
-
-**No more manual imports!** The agent now automatically discovers:
-
-### 🛠️ Auto Tool Discovery
-Drop any Python file into `src/tools/` and the agent instantly knows how to use it:
-
-```python
-# src/tools/my_custom_tool.py
-def analyze_sentiment(text: str) -> str:
-    """Analyzes the sentiment of given text.
-    
-    Args:
-        text: The text to analyze.
-        
-    Returns:
-        Sentiment score and analysis.
-    """
-    # Your implementation
-    return "Positive sentiment detected!"
-```
-
-**That's it!** No need to edit `agent.py`. Just restart and the tool is available.
-
-### 📚 Auto Context Loading
-Add knowledge files to `.context/` and they're automatically injected:
-
-```bash
-echo "# Project Rules\nUsefriendly language." > .context/project_rules.md
-```
-
-The agent will follow these rules immediately on next run.
-
-## 🔥 New: Multi-Agent Swarm Protocol
-
-**Collaborate at scale!** The swarm enables multiple specialist agents to work together:
-
-### 🪐 Architecture: Router-Worker Pattern
-
-```mermaid
-graph TD
-    User[User Task] --> Router[🧭 Router Agent]
-    Router --> Coder[💻 Coder Agent]
-    Router --> Reviewer[🔍 Reviewer Agent]
-    Router --> Researcher[📚 Researcher Agent]
-    Coder --> Router
-    Reviewer --> Router
-    Researcher --> Router
-    Router --> Result[📊 Synthesized Result]
-```
-
-**Specialist Agents:**
-- **Router**: Analyzes tasks, delegates to specialists, synthesizes results
-- **Coder**: Writes clean, well-documented code
-- **Reviewer**: Checks quality, security, best practices
-- **Researcher**: Gathers information and insights
-
-### 🚀 Usage
-
-**Run the interactive demo:**
-```bash
-python -m src.swarm_demo
-```
-
-**Use in your code:**
-```python
-from src.swarm import SwarmOrchestrator
-
-swarm = SwarmOrchestrator()
-result = swarm.execute("Build a calculator and review it for security")
-print(result)
-```
-
-**Example output:**
-```
-🧭 [Router] Analyzing task...
-📤 [Router → Coder] Build a calculator
-💻 [Coder] Creating calculator implementation...
-✅ [Coder] Done!
-The agent follows a strict "Think-Act-Reflect" loop, simulating the cognitive process of Gemini 3.
-
-```mermaid
-sequenceDiagram
-    participant User
-    participant Agent as 🤖 GeminiAgent
-    participant Memory as 🧠 Memory
-    participant Tools as 🛠️ Tools
-    participant Artifacts as 📂 Artifacts
-
-    User->>Agent: "Refactor Authentication"
-    activate Agent
-    
-    Agent->>Artifacts: Create Implementation Plan
-    
-    Note over Agent: <thought> Deep Think Process </thought>
-    Agent->>Agent: Formulate Strategy
-    
-    Agent->>Tools: Execute Tool (code_edit)
-    activate Tools
-    Tools-->>Agent: Result
-    deactivate Tools
-    
-    Agent->>Artifacts: Save Logs/Evidence
-    
-    Agent-->>User: Final Report (Walkthrough)
-    deactivate Agent
-```
-
-## 🔥 Killer Features
-
-- 🧠 **Infinite Memory Engine**: Recursive summarization automatically compresses history. Context limits are a thing of the past.
-- 🛠️ **Universal Tool Protocol**: Generic ReAct pattern. Just register any Python function in `available_tools`, and the Agent learns to use it.
-- ⚡️ **Gemini Native**: Optimized for Gemini 2.0 Flash's speed and function calling capabilities.
-
-## 🚀 Quick Start
-
-### Local Development
-1. **Install Dependencies**:
-    ```bash
-    pip install -r requirements.txt
-    ```
-2. **Run the Agent**:
-    ```bash
-    python src/agent.py
-    ```
-
-### Docker Deployment
-1. **Build & Run**:
-    ```bash
-    docker-compose up --build
-    ```
-
-## 📂 Project Structure
-
-```
-.
-├── .antigravity/       # 🛸 Official Antigravity Config
-│  └── rules.md        # Agent Rules & Permissions
-├── artifacts/          # 📂 Agent Outputs (Plans, Logs, Visuals)
-├── .context/           # AI Knowledge Base
-├── .github/            # CI/CD Workflows
-├── src/                # Source Code
-│  ├── agent.py        # Main Agent Logic
-│  ├── config.py       # Settings Management
-│  ├── memory.py       # JSON Memory Manager
-│  └── tools/          # Agent Tools
-├── tests/              # Test Suite
-├── .cursorrules        # Compatibility Pointer
-├── Dockerfile          # Production Build
-├── docker-compose.yml  # Local Dev Setup
-└── mission.md          # Agent Objective
+├── .antigravity/        # 🛸 Antigravity config/rules
+├── .context/            # 📚 Knowledge base auto-injected
+├── .cursorrules         # 🔎 IDE auto-load pointer
+├── .github/             # ⚙️ CI/CD workflows
+├── artifacts/           # 📂 Agent outputs (plans, logs, visuals)
+├── scripts/             # 🧪 Demo/utility scripts
+│   └── demo_tools.py
+├── src/                 # 🧠 Agent source
+│   ├── agent.py         # Main agent loop
+│   ├── config.py        # Settings management
+│   ├── mcp_client.py    # MCP integration client
+│   ├── memory.py        # JSON memory manager
+│   ├── swarm.py         # Swarm orchestrator
+│   ├── swarm_demo.py    # Swarm interactive demo
+│   ├── agents/          # Specialist agents (router/coder/reviewer/researcher)
+│   │   ├── base_agent.py
+│   │   ├── coder_agent.py
+│   │   ├── researcher_agent.py
+│   │   ├── reviewer_agent.py
+│   │   └── router_agent.py
+│   └── tools/           # Tool implementations
+│       ├── demo_tool.py
+│       ├── example_tool.py
+│       ├── mcp_tools.py
+│       └── openai_proxy.py
+├── tests/               # ✅ Test suite
+│   ├── conftest.py
+│   ├── test_agent.py
+│   ├── test_mcp.py
+│   ├── test_memory.py
+│   └── test_swarm.py
+├── agent_memory.json    # Runtime memory store
+├── mcp_servers.json     # MCP server configs
+├── mission.md           # Agent objective
+├── requirements.txt     # Python deps
+├── Dockerfile           # Container build
+├── docker-compose.yml   # Local dev stack
+├── README.md / README_ES.md / README_CN.md
+└── LICENSE
 ```
 
 ## 🚀 The "Zero-Config" Workflow
@@ -361,66 +191,47 @@ The AI will automatically:
 
 **Connect to any MCP server!** The agent now supports the [Model Context Protocol](https://modelcontextprotocol.io/), enabling seamless integration with external tools and services.
 
-## 🌐 New: External LLM (OpenAI-Compatible) Support
-
-Use any OpenAI-format chat completion endpoint (OpenAI, Azure OpenAI, local Ollama, etc.) to drive the agent with a unified API.
-
-1) Configure environment:
-```bash
-OPENAI_BASE_URL=https://api.openai.com/v1   # or http://localhost:11434/v1 for Ollama
-OPENAI_API_KEY=sk-...                       # leave empty if not required
-OPENAI_MODEL=gpt-4o-mini                    # or your preferred model
-```
-2) Use the tool:
-   - Tool name: `call_openai_chat`
-   - Args: `prompt` (str), optional `system`, `model`, `temperature`, `max_tokens`.
-3) Behavior:
-   - Follows standard OpenAI `/chat/completions` schema.
-   - Returns the text content of the first choice, or an error message on failure.
-
 ### 🌐 What is MCP?
 
-MCP is an open protocol that standardizes how AI applications connect to external data sources and tools. With MCP integration, your Antigravity agent can:
+MCP standardizes how AI apps connect to external tools and data. With MCP, your agent can:
 
-- 🔗 Connect to multiple MCP servers simultaneously
-- 🛠️ Use any tools exposed by MCP servers
-- 📊 Access databases, APIs, filesystems, and more
-- 🔄 All transparently integrated with local tools
+- 🔗 Connect multiple MCP servers simultaneously.
+- 🛠️ Use any tools exposed by those servers.
+- 📊 Access databases, APIs, filesystems, browsers, etc.
+- 🔄 Merge remote tools with local ones transparently.
 
 ### 🚀 Quick Setup
 
-**1. Enable MCP in your `.env`:**
-```bash
-MCP_ENABLED=true
-```
-
-**2. Configure servers in `mcp_servers.json`:**
-```json
-{
-  "servers": [
+1. **Enable MCP in `.env`:**
+    ```bash
+    MCP_ENABLED=true
+    ```
+2. **Configure servers in `mcp_servers.json`:**
+    ```json
     {
-      "name": "github",
-      "transport": "stdio",
-      "command": "npx",
-      "args": ["-y", "@modelcontextprotocol/server-github"],
-      "enabled": true,
-      "env": {
-        "GITHUB_PERSONAL_ACCESS_TOKEN": "${GITHUB_TOKEN}"
-      }
+      "servers": [
+        {
+          "name": "github",
+          "transport": "stdio",
+          "command": "npx",
+          "args": ["-y", "@modelcontextprotocol/server-github"],
+          "enabled": true,
+          "env": {
+            "GITHUB_PERSONAL_ACCESS_TOKEN": "${GITHUB_TOKEN}"
+          }
+        }
+      ]
     }
-  ]
-}
-```
-
-**3. Run the agent:**
-```bash
-python src/agent.py
-```
+    ```
+3. **Run the agent:**
+    ```bash
+    python src/agent.py
+    ```
 
 The agent will automatically:
-- 🔌 Connect to configured MCP servers
-- 🔍 Discover available tools
-- 📦 Register them alongside local tools
+- 🔌 Connect to configured MCP servers.
+- 🔍 Discover available tools.
+- 📦 Merge them with local tools.
 
 ### 🏗️ Architecture
 
@@ -445,39 +256,28 @@ graph TD
 
 ### 🛠️ Built-in MCP Helper Tools
 
-The agent includes helper tools for MCP management:
-
-```python
-# List all connected MCP servers
-list_mcp_servers()
-
-# List available MCP tools
-list_mcp_tools()
-
-# Get help for a specific tool
-get_mcp_tool_help("mcp_github_create_issue")
-
-# Check server health
-mcp_health_check()
-```
+- `list_mcp_servers()` — List connected servers.
+- `list_mcp_tools()` — Enumerate available tools.
+- `get_mcp_tool_help("<tool>")` — Show help for a tool.
+- `mcp_health_check()` — Check server health.
 
 ### 📋 Pre-configured Servers
 
-The `mcp_servers.json` includes ready-to-use configurations for:
+`mcp_servers.json` ships templates for:
 
-- 🗂️ **Filesystem**: Local file operations
-- 🐙 **GitHub**: Repository management
-- 🗃️ **PostgreSQL**: Database access
-- 🔍 **Brave Search**: Web search
-- 💾 **Memory**: Persistent storage
-- 🌐 **Puppeteer**: Browser automation
-- 💬 **Slack**: Workspace integration
+- 🗂️ **Filesystem**
+- 🐙 **GitHub**
+- 🗃️ **PostgreSQL**
+- 🔍 **Brave Search**
+- 💾 **Memory**
+- 🌐 **Puppeteer**
+- 💬 **Slack**
 
-Just enable the ones you need and add your API keys!
+Enable what you need and add your API keys.
 
 ### 🔧 Creating Custom MCP Servers
 
-You can also create your own MCP servers using the [MCP Python SDK](https://github.com/modelcontextprotocol/python-sdk):
+Example using the [MCP Python SDK](https://github.com/modelcontextprotocol/python-sdk) with FastMCP:
 
 ```python
 from mcp.server.fastmcp import FastMCP
@@ -493,7 +293,7 @@ if __name__ == "__main__":
     mcp.run()
 ```
 
-Then add it to `mcp_servers.json`:
+Register it in `mcp_servers.json`:
 
 ```json
 {
@@ -505,42 +305,48 @@ Then add it to `mcp_servers.json`:
 }
 ```
 
+## 🌐 New: External LLM (OpenAI-Compatible) Support
+
+Use any OpenAI-format chat completion endpoint (OpenAI, Azure OpenAI, local Ollama, etc.) with a unified API.
+
+1) Configure environment:
+```bash
+OPENAI_BASE_URL=https://api.openai.com/v1   # or http://localhost:11434/v1 for Ollama
+OPENAI_API_KEY=sk-...                       # leave empty if not required
+OPENAI_MODEL=gpt-4o-mini                    # or your preferred model
+```
+2) Tool: `call_openai_chat` (args: prompt, system, optional model/temperature/max_tokens).
+3) Behavior: follows standard `/chat/completions`; returns first choice text or error.
+
 ## 🔥 New: True Zero-Config Tool & Context Loading
 
-**No more manual imports!** The agent now automatically discovers:
+**No more manual imports.** The agent discovers and loads tools and context automatically.
 
 ### 🛠️ Auto Tool Discovery
-Drop any Python file into `src/tools/` and the agent instantly knows how to use it:
+Drop any Python file into `src/tools/` and the agent will use it immediately:
 
 ```python
 # src/tools/my_custom_tool.py
 def analyze_sentiment(text: str) -> str:
-    """Analyzes the sentiment of given text.
-    
-    Args:
-        text: The text to analyze.
-        
-    Returns:
-        Sentiment score and analysis.
-    """
-    # Your implementation
+    """Analyzes the sentiment of given text."""
     return "Positive sentiment detected!"
 ```
 
-**That's it!** No need to edit `agent.py`. Just restart and the tool is available.
+Restart and the tool is available without touching `agent.py`.
 
 ### 📚 Auto Context Loading
-Add knowledge files to `.context/` and they're automatically injected:
+Add knowledge to `.context/` and it is injected automatically:
 
 ```bash
-echo "# Project Rules\nUsefriendly language." > .context/project_rules.md
+echo "# Project Rules
+Use friendly language." > .context/project_rules.md
 ```
 
-The agent will follow these rules immediately on next run.
+The agent will follow these rules on the next run.
 
 ## 🔥 New: Multi-Agent Swarm Protocol
 
-**Collaborate at scale!** The swarm enables multiple specialist agents to work together:
+**Collaborate at scale.** The swarm coordinates multiple specialist agents.
 
 ### 🪐 Architecture: Router-Worker Pattern
 
@@ -557,10 +363,10 @@ graph TD
 ```
 
 **Specialist Agents:**
-- **Router**: Analyzes tasks, delegates to specialists, synthesizes results
-- **Coder**: Writes clean, well-documented code
-- **Reviewer**: Checks quality, security, best practices
-- **Researcher**: Gathers information and insights
+- **Router**: Analyzes, delegates, and synthesizes.
+- **Coder**: Writes clean, documented code.
+- **Reviewer**: Checks quality, security, best practices.
+- **Researcher**: Investigates and gathers info.
 
 ### 🚀 Usage
 
@@ -589,10 +395,10 @@ print(result)
 ✅ [Reviewer] Review complete!
 🎉 Task Completed!
 ```
+
 ## 👥 Contributors
 
 A massive thank you to the community members who help build this project:
-
 
 - [@devalexanderdaza](https://github.com/devalexanderdaza) 💻 🧠 **(First Contributor!)**
   - Implemented demo tools script and enhanced agent functionality.
@@ -608,9 +414,8 @@ A massive thank you to the community members who help build this project:
 
 [![Star History Chart](https://api.star-history.com/svg?repos=study8677/antigravity-workspace-template&type=Date)](https://star-history.com/#study8677/antigravity-workspace-template&Date)
 
-## 💡 Call for Ideas: Swarm Protocol
+## 💡 Call for Ideas: Enterprise Core
 
-We value **ideas** as much as code! 
-We are currently brainstorming the architecture for **Phase 6: Multi-Agent Swarm**. If you provide a solid architectural suggestion or a detailed design that gets adopted, **you will be added to our README as a Contributor**.
+We value **ideas** as much as code. The focus now is **Phase 9: Enterprise Core** (safe sandboxing and orchestrated flows). If you propose an adoptable architecture or design, **we'll add you as a contributor**.
 
-Don't hesitate to share your thoughts in the [Issues](https://github.com/study8677/antigravity-workspace-template/issues), even if you don't have time to write the implementation.
+Share your thoughts in the [Issues](https://github.com/study8677/antigravity-workspace-template/issues), even if you don't have time to write the implementation.
