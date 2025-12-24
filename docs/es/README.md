@@ -141,6 +141,11 @@ Bienvenemos contribuciones en todos los niveles:
 - 💡 **Solicitudes de Características**: [GitHub Discussions](https://github.com/study8677/antigravity-workspace-template/discussions)
 - 👥 **Comunidad**: [Dale una estrella al repo](https://github.com/study8677/antigravity-workspace-template) para mantenerte actualizado
 
+## 👥 Contribuidores
+
+- [@devalexanderdaza](https://github.com/devalexanderdaza) — Primer contribuidor. Implementó herramientas de demo, mejoró la funcionalidad del agente, propuso la hoja de ruta "Agent OS" y completó la integración MCP.
+- [@Subham-KRLX](https://github.com/Subham-KRLX) — Añadió carga dinámica de herramientas y contexto (Fixes #4) y el protocolo de clúster multi‑agente (Fixes #6).
+
 ## 📄 Licencia
 
 Este proyecto está bajo la licencia **MIT**. Ver [LICENSE](../../LICENSE) para detalles.

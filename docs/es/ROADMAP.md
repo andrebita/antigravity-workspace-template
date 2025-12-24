@@ -122,3 +122,8 @@ La visión final es un sistema listo para producción donde las empresas puedan:
 ---
 
 **¿Preguntas o ideas?** Abre un issue en GitHub.
+
+## 👥 Contribuidores
+
+- [@devalexanderdaza](https://github.com/devalexanderdaza) — Primer contribuidor. Implementó herramientas de demo, mejoró la funcionalidad del agente, propuso la hoja de ruta "Agent OS" y completó la integración MCP.
+- [@Subham-KRLX](https://github.com/Subham-KRLX) — Añadió carga dinámica de herramientas y contexto (Fixes #4) y el protocolo de clúster multi‑agente (Fixes #6).

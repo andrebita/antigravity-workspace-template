@@ -141,6 +141,11 @@ See a typo or unclear section? Submit a PR to improve the docs!
 - 💡 **Feature Requests**: [GitHub Discussions](https://github.com/study8677/antigravity-workspace-template/discussions)
 - 👥 **Community**: [Star the repo](https://github.com/study8677/antigravity-workspace-template) to stay updated
 
+## 👥 Contributors
+
+- [@devalexanderdaza](https://github.com/devalexanderdaza) — First contributor. Implemented demo tools, enhanced agent functionality, proposed the "Agent OS" roadmap, and completed MCP integration.
+- [@Subham-KRLX](https://github.com/Subham-KRLX) — Added dynamic tools and context loading (Fixes #4) and the multi-agent cluster protocol (Fixes #6).
+
 ## 📄 License
 
 This project is licensed under the **MIT License**. See [LICENSE](../../LICENSE) for details.

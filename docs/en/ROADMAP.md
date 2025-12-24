@@ -295,3 +295,8 @@ Imagine a world where:
 **Questions or ideas?** Open an issue on GitHub or [propose a contribution](https://github.com/study8677/antigravity-workspace-template/issues).
 
 **Next:** [Full Index](README.md)
+
+## 👥 Contributors
+
+- [@devalexanderdaza](https://github.com/devalexanderdaza) — First contributor. Implemented demo tools, enhanced agent functionality, proposed the "Agent OS" roadmap, and completed MCP integration.
+- [@Subham-KRLX](https://github.com/Subham-KRLX) — Added dynamic tools and context loading (Fixes #4) and the multi-agent cluster protocol (Fixes #6).
