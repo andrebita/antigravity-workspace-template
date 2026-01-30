@@ -1,0 +1,98 @@
+[
+  {
+    "operator_name": "Eldorado Brasil",
+    "plant_name": "Fábrica de Três Lagoas",
+    "signal_type": "maintenance_shutdown",
+    "industry_vertical": "celulose",
+    "phase": "execution",
+    "facts": [
+      "Realização da Parada Geral (PG) da fábrica em Três Lagoas (MS)",
+      "Foco em segurança e eficiência operacional",
+      "Contará com o apoio de mais de 140 empresas parceiras",
+      "Reunirá um contingente de cerca de 3.500 profissionais temporários",
+      "Atividades industriais da planta serão totalmente interrompidas",
+      "Execução de um amplo plano de manutenção preventiva, inspeções e implantações de projetos de melhoria",
+      "Planejamento da PG iniciou há 15 meses atrás",
+      "A empresa produz 1,8 milhão de toneladas de celulose de alta qualidade por ano"
+    ],
+    "valve_hypotheses": [
+      {
+        "hypothesis": "A Parada Geral para manutenção preventiva e implantação de projetos de melhoria sugere uma demanda significativa por válvulas de reposição, reparo e novas instalações.",
+        "rationale": "Paradas gerais envolvem a interrupção total das atividades para manutenção, inspeções e melhorias, o que frequentemente inclui a substituição de válvulas desgastadas, reparo de outras e instalação de novas válvulas em projetos de otimização ou atualização de equipamentos. O grande número de profissionais e empresas parceiras reforça a escala da intervenção, indicando uma alta probabilidade de demanda por componentes, incluindo válvulas.",
+        "confidence": 0.9
+      }
+    ],
+    "score": 0,
+    "confidence": 1.0
+  },
+  {
+    "operator_name": "Bracell",
+    "plant_name": "unidade em Lençóis Paulista",
+    "signal_type": "maintenance_shutdown",
+    "industry_vertical": "celulose",
+    "phase": "execution",
+    "facts": [
+      "Bracell realiza Parada Geral 2025 na Linha 1 de sua unidade em Lençóis Paulista (SP).",
+      "A parada ocorre entre os dias 1 e 10 de abril de 2025.",
+      "O objetivo é assegurar a eficiência e a confiabilidade dos equipamentos, promover a segurança operacional e o bem-estar.",
+      "A parada permite a execução de manutenções essenciais e a implementação de melhorias tecnológicas.",
+      "Todo o processo, incluindo a contratação de empresas parceiras, é conduzido com foco em segurança, saúde ocupacional, planejamento e qualidade."
+    ],
+    "valve_hypotheses": [
+      {
+        "hypothesis": "A Parada Geral na Linha 1 da Bracell em Lençóis Paulista provavelmente gerará demanda por válvulas de reposição e/ou novas válvulas para melhorias tecnológicas e manutenção essencial.",
+        "rationale": "Paradas de manutenção essenciais e a implementação de melhorias tecnológicas em unidades industriais de celulose frequentemente envolvem a substituição de válvulas desgastadas e a instalação de novas válvulas para otimização de processos e segurança operacional.",
+        "confidence": 0.85
+      }
+    ],
+    "score": 0,
+    "confidence": 1.0
+  },
+  {
+    "operator_name": "Suzano",
+    "plant_name": "Unidade de Suzano",
+    "signal_type": "maintenance_shutdown",
+    "industry_vertical": "celulose",
+    "phase": "execution",
+    "facts": [
+      "Realizou a Parada Geral 2025 na Unidade de Suzano (SP)",
+      "Objetivo de realizar manutenção preventiva da fábrica",
+      "Executadas mais de 2,8 mil ordens de serviço",
+      "Contratação de cerca de 120 empresas especializadas em manutenção fabril",
+      "Gerou mais de 2 mil postos temporários de trabalho",
+      "Substituição das correntes do Forno de Cal",
+      "Troca de um Slaker",
+      "Reforma de uma pintadora da máquina de papel cartão"
+    ],
+    "valve_hypotheses": [
+      {
+        "hypothesis": "Alta demanda por válvulas industriais (controle, on/off, segurança) para substituição e reparo durante a Parada Geral, especialmente nas áreas de recuperação química e caustificação (Forno de Cal, Slaker).",
+        "rationale": "Paradas gerais de manutenção preventiva envolvem inspeção e substituição extensiva de válvulas para garantir a integridade operacional. A menção de trabalhos no Forno de Cal e no Slaker, equipamentos críticos em processos com fluidos corrosivos e abrasivos, indica uma necessidade significativa de válvulas para esses sistemas.",
+        "confidence": 0.9
+      }
+    ],
+    "score": 0,
+    "confidence": 1.0
+  },
+  {
+    "operator_name": "Bracell",
+    "plant_name": "Bracell Lençóis Paulista",
+    "signal_type": "maintenance_shutdown",
+    "industry_vertical": "celulose",
+    "phase": "execution",
+    "facts": [
+      "A 19ª Parada Geral de 2025 na Bracell, em Lençóis Paulista–SP, foi finalizada.",
+      "A Birigui Soluções Sustentáveis concluiu a limpeza da maior caldeira do mundo com excelência operacional.",
+      "Foi a 19ª e última Parada Geral do ano na Bracell."
+    ],
+    "valve_hypotheses": [
+      {
+        "hypothesis": "Durante a Parada Geral e a limpeza da caldeira, é altamente provável que tenha ocorrido inspeção, manutenção e potencial substituição de válvulas de segurança, controle e isolamento associadas à caldeira e seus sistemas auxiliares.",
+        "rationale": "Paradas gerais em plantas industriais, especialmente envolvendo a limpeza de grandes caldeiras, são oportunidades críticas para manutenção preventiva e corretiva de todos os componentes, incluindo válvulas que são essenciais para a operação segura e eficiente do equipamento.",
+        "confidence": 0.85
+      }
+    ],
+    "score": 0,
+    "confidence": 1.0
+  }
+]

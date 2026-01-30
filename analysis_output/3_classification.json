@@ -1,0 +1,72 @@
+[
+  {
+    "url": "https://www.eldoradobrasil.com.br/pb/eldorado-brasil-realiza-parada-geral-neste-mes-com-foco-em-seguranca-e-eficiencia-operacional/",
+    "title": "Eldorado Brasil realiza Parada Geral neste mês com foco ...",
+    "classification": {
+      "is_relevant": true,
+      "signal_type": "maintenance_shutdown",
+      "confidence": 1.0,
+      "reason": "O texto descreve uma 'Parada Geral' da Eldorado Brasil Celulose em Três Lagoas (MS) para manutenção preventiva, inspeções e implantação de projetos de melhoria. O setor envolvido é celulose. Uma parada geral de uma fábrica desse porte, com 140 empresas parceiras e 3.500 profissionais, indica alta demanda potencial por válvulas, peças, equipamentos industriais e serviços."
+    }
+  },
+  {
+    "url": "https://newspulpaper.com/calendario-de-parada-geral-2025/",
+    "title": "Calendário de Parada Geral 2025",
+    "classification": {
+      "is_relevant": true,
+      "signal_type": "maintenance_shutdown",
+      "confidence": 1.0,
+      "reason": "O título e o conteúdo mencionam um 'Calendário de Parada Geral 2025' no setor de celulose e papel, indicando uma parada de manutenção programada. Paradas gerais geram demanda por válvulas e equipamentos para substituição e manutenção."
+    }
+  },
+  {
+    "url": "https://www.abtcp.org.br/gallery",
+    "title": "Calendário geral de atividades",
+    "classification": {
+      "is_relevant": true,
+      "signal_type": "industrial_project",
+      "confidence": 0.8,
+      "reason": "O calendário de atividades da ABTCP (Associação Brasileira Técnica de Celulose e Papel) menciona diversos tópicos relevantes para a indústria, como 'Soluções de NR12 para máquinas de papel', 'Biorrefinaria e nano', 'Causa de formação de anéis em Fornos de Cal', 'Inovações em máquinas de celulose, secador e cortadeira', 'Tecnologias de tratamento de efluentes para reuso', 'Uso da IA para ganhos de performance na indústria de celulose e papel', e 'Eficiência de strippers e sistema de gases nas evaporações e caldeiras de recuperação'. Estes temas indicam um foco em modernização, otimização de processos, resolução de problemas operacionais e adoção de novas tecnologias, o que gera demanda potencial por válvulas, instrumentação, bombas, sistemas de tratamento e outros equipamentos industriais para upgrades, substituições e novas instalações. O setor envolvido é predominantemente celulose e papel. Não há menção a petroquímica, refinaria, siderurgia ou mineração."
+    }
+  },
+  {
+    "url": "https://portalcelulose.com.br/bracell-realiza-parada-geral-2025-em-lencois-paulista/",
+    "title": "Bracell realiza Parada Geral 2025 em Lençóis Paulista (SP)",
+    "classification": {
+      "is_relevant": true,
+      "signal_type": "maintenance_shutdown",
+      "confidence": 1.0,
+      "reason": "O texto descreve uma 'Parada Geral' para manutenção essencial e melhorias tecnológicas na unidade da Bracell, uma empresa do setor de celulose. Isso indica uma demanda potencial por válvulas e equipamentos industriais para substituição, reparo ou atualização."
+    }
+  },
+  {
+    "url": "https://online.fliphtml5.com/rhwu/xilv/",
+    "title": "Calendário de Paradas Gerais 2025",
+    "classification": {
+      "is_relevant": true,
+      "signal_type": "maintenance_shutdown",
+      "confidence": 0.9,
+      "reason": "O título 'Calendário de Paradas Gerais 2025' indica claramente um evento de parada de manutenção. Embora o conteúdo do texto não especifique os setores ou empresas envolvidas, paradas gerais geram demanda potencial por válvulas e equipamentos industriais."
+    }
+  },
+  {
+    "url": "https://www.suzano.com.br/noticia/suzano-conclui-parada-de-manutencao-preventiva-em-unidade-de-sp",
+    "title": "Suzano conclui parada de manutenção preventiva em ...",
+    "classification": {
+      "is_relevant": true,
+      "signal_type": "maintenance_shutdown",
+      "confidence": 1.0,
+      "reason": "O texto descreve explicitamente uma 'parada de manutenção preventiva' na unidade de celulose da Suzano. Menciona a substituição de correntes do Forno de Cal, a troca de um Slaker e a reforma de uma pintadora, indicando demanda por equipamentos e serviços industriais."
+    }
+  },
+  {
+    "url": "https://www.instagram.com/biriguiss/p/DSFZanEjkWe/?hl=bn",
+    "title": "Finalizamos a 19ª Parada Geral de 2025 na Bracell ...",
+    "classification": {
+      "is_relevant": true,
+      "signal_type": "maintenance_shutdown",
+      "confidence": 1.0,
+      "reason": "O texto descreve a conclusão de uma 'Parada Geral' (manutenção) na Bracell, no setor de celulose, envolvendo a limpeza de uma caldeira. Isso indica uma demanda potencial por serviços e equipamentos industriais para manutenção."
+    }
+  }
+]
