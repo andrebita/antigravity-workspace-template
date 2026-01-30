@@ -15,7 +15,7 @@ import asyncio
 import json
 import os
 from pathlib import Path
-from typing import Any, Callable, Dict, List, Optional, Tuple
+from typing import Any, Awaitable, Callable, Dict, List, Optional, Tuple
 from dataclasses import dataclass, field
 
 from src.config import settings, MCPServerConfig
@@ -497,18 +497,69 @@ class MCPClientManagerSync:
         self._async_manager = MCPClientManager(config_path)
         self._loop: Optional[asyncio.AbstractEventLoop] = None
 
-    def _get_loop(self) -> asyncio.AbstractEventLoop:
-        """Get or create an event loop."""
+    def _get_loop(self) -> Tuple[asyncio.AbstractEventLoop, bool]:
+        """Get or create an event loop.
+
+        Returns:
+            Tuple of the event loop and whether the current thread already
+            has a running loop.
+        """
         try:
-            return asyncio.get_running_loop()
+            running_loop = asyncio.get_running_loop()
         except RuntimeError:
-            if self._loop is None or self._loop.is_closed():
-                self._loop = asyncio.new_event_loop()
-            return self._loop
+            running_loop = None
+
+        if running_loop is not None:
+            # Avoid calling run_until_complete on a running loop, which raises
+            # RuntimeError. Use a separate loop (via a new thread) instead.
+            return running_loop, True
+
+        if self._loop is None or self._loop.is_closed():
+            self._loop = asyncio.new_event_loop()
+
+        return self._loop, False
+
+    def _run_in_new_thread(self, coro: Awaitable[Any]) -> Any:
+        """Run a coroutine in a new event loop on a dedicated thread.
+
+        Args:
+            coro: Coroutine to execute.
+
+        Returns:
+            Result of the coroutine.
+
+        Raises:
+            Exception: Any exception raised by the coroutine.
+        """
+        import threading
+
+        result: Dict[str, Any] = {}
+
+        def runner() -> None:
+            loop = asyncio.new_event_loop()
+            asyncio.set_event_loop(loop)
+            try:
+                result["value"] = loop.run_until_complete(coro)
+            except Exception as exc:
+                result["error"] = exc
+            finally:
+                loop.close()
+
+        thread = threading.Thread(target=runner, daemon=True)
+        thread.start()
+        thread.join()
+
+        if "error" in result:
+            raise result["error"]
+
+        return result.get("value")
 
     def initialize(self) -> None:
         """Initialize MCP connections synchronously."""
-        loop = self._get_loop()
+        loop, running = self._get_loop()
+        if running:
+            self._run_in_new_thread(self._async_manager.initialize())
+            return
         loop.run_until_complete(self._async_manager.initialize())
 
     def get_all_tools_as_callables(self) -> Dict[str, Callable[..., Any]]:
@@ -520,7 +571,9 @@ class MCPClientManagerSync:
 
             def make_sync_wrapper(afn):
                 def sync_wrapper(**kwargs):
-                    loop = self._get_loop()
+                    loop, running = self._get_loop()
+                    if running:
+                        return self._run_in_new_thread(afn(**kwargs))
                     return loop.run_until_complete(afn(**kwargs))
 
                 sync_wrapper.__name__ = afn.__name__
@@ -537,7 +590,10 @@ class MCPClientManagerSync:
 
     def shutdown(self) -> None:
         """Shutdown connections."""
-        loop = self._get_loop()
+        loop, running = self._get_loop()
+        if running:
+            self._run_in_new_thread(self._async_manager.shutdown())
+            return
         loop.run_until_complete(self._async_manager.shutdown())
 
     def get_status(self) -> Dict[str, Any]:
